@@ -34,9 +34,9 @@ class Receipt
         return @products.each { |product| total += (product.price + (product.price * 0.05))}
       end
 
-        puts "Taxes: $#{tax}"
+        puts "Taxes: $#{tax.round(2)}"
 
-        "Total: $#{total}"
+        "Total: $#{total.round(2)}"
   end
 
   def output
@@ -45,10 +45,10 @@ class Receipt
 
 end
 
-item1 = Item.new("Bar One chocolate 35g", 15.10, false, true)
-item2 = Item.new("Bottle of perfume 150g", 102.52, false, true)
-item3 = Item.new("A packet of Headache pills 10g", 20.42, true, false)
-item4 = Item.new("A Book of stories", 7.34, false, true)
+item1 = Item.new("1 Bar One chocolate 35g", 45.10, false, true)
+item2 = Item.new("1 Bottle of perfume 150g", 102.52, false, true)
+item3 = Item.new("1 A packet of Headache pills 10g", 20.42, true, false)
+item4 = Item.new("1 A Book of stories", 37.34, false, true)
 
 receipt1 = Receipt.new([item1, item2, item3, item4])
 receipt1.output
